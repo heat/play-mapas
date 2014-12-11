@@ -1,0 +1,13 @@
+Aplicação de exemplo do ebean
+=======================================
+
+Nessa aplicação utilizamos alguns dos recursos avançados do ebean para criar entidades
+
+todas estão funcionando e foram abordados os seguintes exemplos:
+
+* relacionamento OneToOne ManyToOne OneToMany com uso do mappedby
+* herança com estratégia SINGLE_TABLE
+* atributos com mesmo nome em subclasses
+
+disponibilizado uma interface rest para fazer inserção dos dados.
+
