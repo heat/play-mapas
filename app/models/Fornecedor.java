@@ -14,8 +14,8 @@ public class Fornecedor extends Pessoa {
 
     @Column(name = "FORNECEDOR_NASCIMENTO")
     @Temporal(TemporalType.DATE)
-    Date nascimento;
+    public Date nascimento;
 
     @OneToOne(mappedBy = "fornecedor")
-    FornecedorComplemento complemento;
+    public FornecedorComplemento complemento;
 }
