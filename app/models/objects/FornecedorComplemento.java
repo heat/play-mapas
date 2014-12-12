@@ -13,39 +13,15 @@ import javax.persistence.OneToOne;
 public class FornecedorComplemento extends Model {
 
     @Id
-    Long id;
+    public Long id;
 
     @JsonIgnore
     @OneToOne
-    private Fornecedor fornecedor;
+    public Fornecedor fornecedor;
 
     @Column
-    private String inscricaoEstadual;
+    public String inscricaoEstadual;
 
     @Column
-    private String inscricaoMunicipal;
-
-    public Fornecedor getFornecedor() {
-        return fornecedor;
-    }
-
-    public void setFornecedor(Fornecedor fornecedor) {
-        this.fornecedor = fornecedor;
-    }
-
-    public String getInscricaoEstadual() {
-        return inscricaoEstadual;
-    }
-
-    public void setInscricaoEstadual(String inscricaoEstadual) {
-        this.inscricaoEstadual = inscricaoEstadual;
-    }
-
-    public String getInscricaoMunicipal() {
-        return inscricaoMunicipal;
-    }
-
-    public void setInscricaoMunicipal(String inscricaoMunicipal) {
-        this.inscricaoMunicipal = inscricaoMunicipal;
-    }
+    public String inscricaoMunicipal;
 }

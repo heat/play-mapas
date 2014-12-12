@@ -67,7 +67,9 @@ public class PessoasController extends Controller {
         FornecedorComplemento complemento = Json.fromJson(
                 request().body().asJson(), FornecedorComplemento.class);
 
-        complemento.setFornecedor(f);
+        complemento.fornecedor = f;
+
+        f.complemento = complemento;
 
         complemento.save();
 
