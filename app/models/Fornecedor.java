@@ -1,5 +1,7 @@
 package models;
 
+import models.objects.FornecedorComplemento;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -21,4 +23,16 @@ public class Fornecedor extends Pessoa {
     @Column(name = "FORNECEDOR_NASCIMENTO")
     @Temporal(TemporalType.DATE)
     Date nascimento;
+
+    @OneToOne(mappedBy = "fornecedor")
+    @JoinColumn(name = "id", referencedColumnName = "fornecedor_id")
+    private FornecedorComplemento complemento;
+
+    public FornecedorComplemento getComplemento() {
+        return complemento;
+    }
+
+    public void setComplemento(FornecedorComplemento complemento) {
+        this.complemento = complemento;
+    }
 }
