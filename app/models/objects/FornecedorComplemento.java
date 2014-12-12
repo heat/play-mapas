@@ -1,5 +1,6 @@
 package models.objects;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import models.Fornecedor;
 import play.db.ebean.Model;
 
@@ -11,13 +12,17 @@ import javax.persistence.OneToOne;
 @Entity
 public class FornecedorComplemento extends Model {
 
+    @Id
+    Long id;
+
+    @JsonIgnore
     @OneToOne
     private Fornecedor fornecedor;
 
-    @Column(name = "INSCESTADUAL")
+    @Column
     private String inscricaoEstadual;
 
-    @Column(name = "INSCMUNICIPAL")
+    @Column
     private String inscricaoMunicipal;
 
     public Fornecedor getFornecedor() {
