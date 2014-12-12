@@ -14,8 +14,8 @@ import java.util.Date;
 @DiscriminatorValue("F")
 public class Fornecedor extends Model {
 
-    @Id
-    FornecedorKey k;
+    @EmbeddedId
+    public FornecedorKey k;
 
     @Column
     public String nome;

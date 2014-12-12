@@ -21,14 +21,6 @@ public class PessoasController extends Controller {
         String DTYPE = request().getHeader("clientType");
         Pessoa p=null;
         switch (DTYPE) {
-            case "F" :
-                Fornecedor f  = Json.fromJson(request().body().asJson(), Fornecedor.class);
-                f.save();
-                return create();
-            case "I" :
-                FornecedorInterno i  = Json.fromJson(request().body().asJson(), FornecedorInterno.class);
-                i.save();
-                return create();
             case "C" :
                 p  = Json.fromJson(request().body().asJson(), Cliente.class);
                 break;
@@ -64,22 +56,5 @@ public class PessoasController extends Controller {
         p.save();
 
         return noContent();
-    }
-
-    public static Result createComplemento(Long id) {
-        Fornecedor f = (Fornecedor) Fornecedor.find.byId(
-                new FornecedorKey(id)
-        );
-
-        FornecedorComplemento complemento = Json.fromJson(
-                request().body().asJson(), FornecedorComplemento.class);
-
-        complemento.fornecedor = f;
-
-        f.complemento = complemento;
-
-        complemento.save();
-
-        return create();
     }
 }
